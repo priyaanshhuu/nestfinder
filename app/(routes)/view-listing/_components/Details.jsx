@@ -16,7 +16,7 @@ function Details({listingDetail}) {
                 <MapPin />
                 {listingDetail?.address}</h2>
         </div>
-        <Button className="flex gap-2"> <Share /> Share</Button>
+        {/* <Button className="flex gap-2"> <Share /> Share</Button> */}
     </div>
     <hr></hr>
      <div className='mt-4 flex flex-col gap-3'>
