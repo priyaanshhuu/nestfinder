@@ -28,11 +28,12 @@ export default function Page() {
         </a>
 
         <h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-          Welcome to Nest Finder
+          Welcome to Squid 🦑
         </h2>
 
         <p className="mt-4 leading-relaxed text-white/90">
-          Find your nest today!!
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nam dolorum aliquam,
+          quibusdam aperiam voluptatum.
         </p>
       </div>
     </section>
