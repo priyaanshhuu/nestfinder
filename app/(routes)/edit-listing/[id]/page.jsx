@@ -87,8 +87,8 @@ function EditListing({ params }) {
       // console.log(fileExt)
       const { data, error } = await supabase.storage
         .from('listingimage')
-        .upload(`${fileName}`, file, {
-          contentType: `image/${fileExt}`,
+        .upload(`₹{fileName}`, file, {
+          contentType: `image/₹{fileExt}`,
           upsert: false
         })
 

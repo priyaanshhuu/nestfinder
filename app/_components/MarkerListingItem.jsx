@@ -17,7 +17,7 @@ function MarkerListingItem({ item, closeHandler }) {
           className='rounded-lg w-[180px] object-cover h-[120px]'
         />
         <div className='flex mt-2 flex-col gap-2 p-2 bg-white '>
-          <h2 className='font-bold text-xl'>${item?.price}</h2>
+          <h2 className='font-bold text-xl'>₹{item?.price}</h2>
           <h2 className='flex gap-2 text-sm text-gray-400 '>
             <MapPin className='h-4 w-4' />
             {item.address}</h2>
