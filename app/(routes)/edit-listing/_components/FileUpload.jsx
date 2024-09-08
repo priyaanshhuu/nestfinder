@@ -22,7 +22,7 @@ function FileUpload({setImages}) {
             <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span className="font-semibold">Click to upload</span> or drag and drop</p>
             <p className="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
           </div>
-          <input id="dropzone-file" type="file" className="hidden" multiple onChange={handleFileUpload} accept='image/png, image/gif, image/jpeg'/>
+          <input id="dropzone-file" type="file" className="hidden" multiple onChange={handleFileUpload} accept='image/png, image/gif, image/jpeg image/jpg'/>
         </label>
       </div>
       <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-10 gap-3 mt-3'>
