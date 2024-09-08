@@ -17,7 +17,7 @@ const GoogleAddressSearch = ({selectedAddress, setCoordinates}) => {
           className: ' w-full',
           onChange: ((place) => {
             // setValue
-            // console.log(place)
+            // console.log("1214314",place)
             selectedAddress(place)
             geocodeByAddress(place && place.label)
               .then(result => getLatLng(result[0]))

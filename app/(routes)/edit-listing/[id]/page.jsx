@@ -28,6 +28,7 @@ import { Loader } from 'lucide-react'
 function EditListing({ params }) {
   const [isVerified, setIsVerified] = useState(false)
   const { user } = useUser()
+  console.log("Aveek",user)
   const router = useRouter()
 
   const [images, setImages] = useState([])
@@ -60,6 +61,8 @@ function EditListing({ params }) {
 
   const onSubmitHandler = async (formValue) => {
     setLoading(true)
+    console.log(formValue)
+
     const { data, error } = await supabase
       .from('listing')
       .update(formValue)
@@ -143,10 +146,10 @@ function EditListing({ params }) {
             type: '',
             propertyType: '',
             profileimage: user?.imageUrl,
-            username: user?.username
+            fullName: user?.fullName
           }}
           onSubmit={(values) => {
-            // console.log(values)
+            console.log(values)
             onSubmitHandler(values)
           }}
         >
@@ -160,7 +163,7 @@ function EditListing({ params }) {
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
                   <div className='flex flex-col gap-2'>
                     <h2 className='text-lg text-gray-500'>Rent or Sell?</h2>
-                    <RadioGroup defaultValue="Sell" onValueChange={((v) => values.type = v)}>
+                    <RadioGroup onValueChange={((v) => values.type = v)}>
                       <div className="flex items-center space-x-2">
                         <RadioGroupItem value="Rent" id="Rent" />
                         <Label htmlFor="Rent">Rent</Label>

@@ -5,12 +5,14 @@ import GoogleAddressSearch from './GoogleAddressSearch'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 import FilterSection from './FilterSection'
+import Link from 'next/link'
 
 function Listing({listing,handleSearchClick,searchedAddress,
   setBathCount,
   setBedCount,
   setParkingCount,
-  setHomeType
+  setHomeType,
+  setCoordinates
 }) {
   const [address,setAddress]=useState()
   return (
@@ -18,7 +20,7 @@ function Listing({listing,handleSearchClick,searchedAddress,
       <div className='p-3 flex gap-6'>
       <GoogleAddressSearch
       selectedAddress={(v)=>{searchedAddress(v); setAddress(v)}}
-      setCoordinates={(v)=>console.log(v)}
+      setCoordinates={setCoordinates}
       />
       <Button className='flex gap-2'  onClick={handleSearchClick}> <Search className='h-4 w-4'/> Search</Button>
       </div>
@@ -34,7 +36,7 @@ function Listing({listing,handleSearchClick,searchedAddress,
       <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
       <div>
         {listing?.length>0? listing.map((item,index)=>(
-          
+          <Link href={'/view-listing/'+item.id}>
           <div key={index} className='p-3 w-full hover:border hover:border-primary cursor-pointer'>
             <img src={item.listingimages[0].url} width={800} height={150} className='rounded-lg object-cover h-[170px]'/>
             <div className='flex mt-2 flex-col gap-2'>
@@ -58,11 +60,13 @@ function Listing({listing,handleSearchClick,searchedAddress,
               </div>
             </div>
           </div>
+          </Link>
         )):[1,2,3,4,5,6,7,8].map((item,index)=>{
           <div key={index} className='h-[230px] w-full bg-slate-200 animate-pulse rounded-lg'>
 
           </div>
         })}
+        
       </div>
     </div>
     </div>
